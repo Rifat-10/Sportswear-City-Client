@@ -2,6 +2,7 @@ import React from 'react';
 import Activity from './Activity/Activity';
 import Banner from './Banner/Banner';
 import InventoryItems from './InventoryItems/InventoryItems';
+import Reviews from './Reviews/Reviews';
 
 const Home = () => {
     return (
@@ -11,7 +12,8 @@ const Home = () => {
              <InventoryItems></InventoryItems>
              <br /> <br /> <br /> <br />
              <Activity></Activity>
-            
+             <br /> <br /> <br /> <br />
+             <Reviews></Reviews>
         </div>
     );
 };

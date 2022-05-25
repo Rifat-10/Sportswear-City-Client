@@ -4,7 +4,7 @@ import image1 from '../../../images/Banner/Banner1.jpg';
 import image2 from '../../../images/Banner/Banner2.jpeg';
 import image3 from '../../../images/Banner/Banner3.png';
 import image4 from '../../../images/Banner/Banner4.jpg';
-import image5 from '../../../images/Banner/Banner5.jpeg';
+import image5 from '../../../images/Banner/Banner6.jpg';
 
 const Banner = () => {
     return (
