@@ -1,16 +1,16 @@
 import React from 'react';
-import SignUp from '../Sign-In-Up/SignUp/SignUp';
 import Activity from './Activity/Activity';
 import Banner from './Banner/Banner';
+import InventoryItems from './InventoryItems/InventoryItems';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <br /> <br /> <br /> <br />
-             <Activity></Activity>
+             <InventoryItems></InventoryItems>
              <br /> <br /> <br /> <br />
-             <SignUp></SignUp>
+             <Activity></Activity>
             
         </div>
     );
