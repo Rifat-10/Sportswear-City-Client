@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {
@@ -26,6 +26,19 @@ const Navigation = () => {
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
+          <Nav.Item>
+            <Nav.Link>
+
+            <Button className='px-3 py-1 m-1' as={Link} to='login' variant='dark'>
+                  SignIn
+                </Button>
+
+
+                <Button className='px-3 py-1 m-1' as={Link} to='login' variant='dark'>
+                  SignUp
+                </Button>
+            </Nav.Link>
+          </Nav.Item>
         </Container>
       </Navbar>
         </div>
