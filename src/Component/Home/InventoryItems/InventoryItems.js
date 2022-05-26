@@ -53,7 +53,7 @@ const InventoryItems = () => {
                       }}
                       variant='dark'
                     >
-                      Manage
+                      Details 
                     </Button>
                   </Card.Text>
                 </Card.Body>
@@ -62,7 +62,7 @@ const InventoryItems = () => {
           ))}
         </Row>
         <div className='d-flex justify-content-center pt-5'>
-          <Link to='/manageInventory' className="btn btn-dark">
+          <Link to='' className="btn btn-dark">
             {" "}
             Manage Inventories{" "}
           </Link>

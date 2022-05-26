@@ -8,8 +8,7 @@ import './Navigation.css';
 const Navigation = () => {
   const {user} = useAuth();
   const {logOut} = useFirebase();
-
-  console.log(user);
+  
   return (
     <div>
       <Navbar bg='light' expand='lg'>
@@ -25,6 +24,28 @@ const Navigation = () => {
                   Home
                 </Nav.Link>
               </Nav.Item>
+
+              {user ? (
+                <>
+                  <Nav.Item>
+                    <Nav.Link as={Link} to='/manageInventory'>
+                      Manage Inventory
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link as={Link} to='/addNewInventory'>
+                      Add Inventory
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link as={Link} to='/myInventories'>
+                      My Inventories
+                    </Nav.Link>
+                  </Nav.Item>
+                </>
+              ) : (
+                <></>
+              )}
 
               <Nav.Item>
                 <Nav.Link as={Link} to='/blog'>
