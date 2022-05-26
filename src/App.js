@@ -7,6 +7,7 @@ import Blog from './Component/Blog/Blog';
 import SignUp from './Component/Sign-In-Up/SignUp/SignUp';
 import SignIn from './Component/Sign-In-Up/SignIn/SignIn';
 import Inventory from './Component/Inventory/Inventory';
+import ManageInventory from './Component/ManageInventory/ManageInventory';
 
 function App() {
   return (
@@ -22,7 +23,12 @@ function App() {
           }
         ></Route>
        <Route path='blog' element={<Blog />}></Route>
-        
+       <Route
+          path='manageInventory'
+          element={
+              <ManageInventory />
+          }
+        ></Route>
        <Route path='login' element={<SignIn />}></Route>
        <Route path='signup' element={<SignUp />}></Route>
 
