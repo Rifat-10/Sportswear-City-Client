@@ -8,6 +8,8 @@ import SignUp from './Component/Sign-In-Up/SignUp/SignUp';
 import SignIn from './Component/Sign-In-Up/SignIn/SignIn';
 import Inventory from './Component/Inventory/Inventory';
 import ManageInventory from './Component/ManageInventory/ManageInventory';
+import AddNewInventory from './Component/AddNewInventory/AddNewInventory';
+import Notfound from './Component/Notfound/Notfound';
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
      <Navigation></Navigation>
      <Routes>
        <Route path='/' element={<Home />}></Route>
+       <Route path='*' element={<Notfound />}></Route>
        <Route
           path='inventory/:id'
           element={
@@ -29,7 +32,14 @@ function App() {
               <ManageInventory />
           }
         ></Route>
-       <Route path='login' element={<SignIn />}></Route>
+        <Route
+          path='addNewInventory'
+          element={
+              <AddNewInventory />
+
+          }
+        ></Route>
+        <Route path='login' element={<SignIn />}></Route>
        <Route path='signup' element={<SignUp />}></Route>
 
      </Routes>

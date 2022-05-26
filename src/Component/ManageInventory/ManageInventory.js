@@ -38,8 +38,8 @@ const ManageInventory = () => {
   return (
     <div>
       <Container>
-        <div className='d-flex justify-content-start'>
-          <Link to="" className='btn btn-dark mt-4 ms-5'>
+      <div className='d-flex justify-content-start'>
+          <Link to="/addNewInventory" className='btn btn-dark mt-4 ms-5'>
             Add New Inventory
           </Link>
         </div>
