@@ -1,6 +1,6 @@
 import React from 'react';
 import ReviewsInHome from '../ReviewsInHome/ReviewsInHome';
-import Activity from './Activity/Activity';
+import AboutUs from './AboutUs/AboutUs';
 import Banner from './Banner/Banner';
 import InventoryItems from './InventoryItems/InventoryItems';
 
@@ -11,7 +11,7 @@ const Home = () => {
             <br /> <br /> <br /> <br />
              <InventoryItems></InventoryItems>
              <br /> <br /> <br /> <br />
-             <Activity></Activity>
+             <AboutUs></AboutUs>
              <br /> <br /> <br /> <br />
              <ReviewsInHome></ReviewsInHome>
              <br /> <br /> <br /> <br />

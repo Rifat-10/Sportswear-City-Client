@@ -3,11 +3,11 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 const InventoryItems = () => {
-    const [inventories, setInventory] = useState([]);
-  
+  const [inventories, setInventory] = useState([]);
+
 
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("https://ancient-earth-53668.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
@@ -53,7 +53,7 @@ const InventoryItems = () => {
                       }}
                       variant='dark'
                     >
-                      Details 
+                      Details
                     </Button>
                   </Card.Text>
                 </Card.Body>
@@ -68,8 +68,8 @@ const InventoryItems = () => {
           </Link>
         </div>
       </Container>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default InventoryItems;

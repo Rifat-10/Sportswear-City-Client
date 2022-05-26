@@ -21,6 +21,7 @@ function App() {
      <Routes>
        <Route path='/' element={<Home />}></Route>
        <Route path='*' element={<Notfound />}></Route>
+       
        <Route
           path='inventory/:id'
           element={

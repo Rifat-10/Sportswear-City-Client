@@ -7,12 +7,12 @@ const ManageInventory = () => {
   const [inventories, setInventory] = useState([]);
 
   let itemNo = 0;
-  if(!inventories){
-      <Loading></Loading>
+  if (!inventories) {
+    <Loading></Loading>
   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("https://ancient-earth-53668.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
@@ -22,15 +22,15 @@ const ManageInventory = () => {
       "Are you sure your want to delete this inventory"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/inventory/${id}`, {
+      fetch(`https://ancient-earth-53668.herokuapp.com/inventory/${id}`, {
         method: 'DELETE'
       })
         .then((resDelete) => resDelete.json())
         .then((dataDelete) => {
-            if (dataDelete.acknowledged === true) {
-                const remaining = inventories.filter(item => item._id !== id);
-                setInventory(remaining);
-            }
+          if (dataDelete.acknowledged === true) {
+            const remaining = inventories.filter(item => item._id !== id);
+            setInventory(remaining);
+          }
         });
     }
   };
@@ -38,7 +38,7 @@ const ManageInventory = () => {
   return (
     <div>
       <Container>
-      <div className='d-flex justify-content-start'>
+        <div className='d-flex justify-content-start'>
           <Link to="/addNewInventory" className='btn btn-dark mt-4 ms-5'>
             Add New Inventory
           </Link>

@@ -9,7 +9,7 @@ const Inventory = () => {
   let quantity = inventory.quantity;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/inventory/${id}`)
+    fetch(`https://ancient-earth-53668.herokuapp.com/inventory/${id}`)
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
@@ -17,7 +17,7 @@ const Inventory = () => {
   const deliveryInventory = () => {
     quantity = quantity - 1;
 
-    fetch(`http://localhost:5000/inventory/${id}`, {
+    fetch(`https://ancient-earth-53668.herokuapp.com/inventory/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -26,20 +26,20 @@ const Inventory = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`https://ancient-earth-53668.herokuapp.com/inventory/${id}`)
           .then((res) => res.json())
           .then((data) => setInventory(data));
       });
   };
 
-  const addItem = (event) =>{
+  const addItem = (event) => {
     event.preventDefault();
     const newInventory = event.target.newInventory.value;
     quantity = quantity + parseInt(newInventory);
 
     console.log(quantity);
 
-    fetch(`http://localhost:5000/inventory/${id}`, {
+    fetch(`https://ancient-earth-53668.herokuapp.com/inventory/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const Inventory = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`https://ancient-earth-53668.herokuapp.com/inventory/${id}`)
           .then((res) => res.json())
           .then((data) => setInventory(data));
       });
