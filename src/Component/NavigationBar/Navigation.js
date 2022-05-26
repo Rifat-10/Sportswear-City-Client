@@ -1,14 +1,21 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+import useFirebase from '../../Hooks/useFirebase';
+import avatar from '../../images/avatar/avatar.jpg'
+import './Navigation.css';
 const Navigation = () => {
-    return (
-        <div>
-              <Navbar bg='light' expand='lg'>
+  const {user} = useAuth();
+  const {logOut} = useFirebase();
+
+  console.log(user);
+  return (
+    <div>
+      <Navbar bg='light' expand='lg'>
         <Container>
           <Navbar.Brand as={Link} to='/' className="fw-bold">
-          Sportswear City
+            Sportswear City
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
@@ -18,7 +25,7 @@ const Navigation = () => {
                   Home
                 </Nav.Link>
               </Nav.Item>
-             
+
               <Nav.Item>
                 <Nav.Link as={Link} to='/blog'>
                   Blog
@@ -27,22 +34,39 @@ const Navigation = () => {
             </Nav>
           </Navbar.Collapse>
           <Nav.Item>
-            <Nav.Link>
+          {!user?.email ? <Nav.Link>
 
-            <Button className='px-3 py-1 m-1' as={Link} to='login' variant='dark'>
-                  SignIn
-                </Button>
+             <Button className='px-3 py-1 m-1' as={Link} to='login' variant='dark'>
+                SignIn
+              </Button>
 
 
-                <Button className='px-3 py-1 m-1' as={Link} to='login' variant='dark'>
-                  SignUp
-                </Button>
+              <Button className='px-3 py-1 m-1' as={Link} to='signup' variant='dark'>
+                SignUp
+              </Button>
             </Nav.Link>
+            :
+            <div className="ms-auto d-flex justify-content-center align-items-center">
+              <div className="nav-item ms-lg-4">
+                {user?.email ? <div className="d-flex justify-content-between align-items-center">
+                <div className="">
+                    <NavLink to="/">{user?.email && user?.photoURL ? <img src={user?.photoURL} className="user-img" alt="" /> : <img src={avatar} title="User not logged in" alt="" className="user-img" />}</NavLink>
+                    {user?.email && <span className="nav-text ms-3 text-uppercase">{user?.displayName}</span>}
+                  </div>
+                  <button onClick={logOut} className="btn authentication-btn rounded-pill ms-3"><p className='m-0'><i class="fas fa-sign-out-alt me-2"></i>Log Out</p></button>
+                  
+                </div>
+                  : <div>
+                    <NavLink to="/signin"><button className="btn authentication-btn rounded-0 me-3"><p><i class="fas fa-sign-in-alt me-2"></i>Log In</p></button></NavLink>
+                    <NavLink to="/signup"><button className="btn authentication-btn rounded-0"><p><i class="fas fa-sign-in-alt me-2"></i>Register</p></button></NavLink>
+                  </div>}
+              </div>
+            </div>}
           </Nav.Item>
         </Container>
       </Navbar>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Navigation;

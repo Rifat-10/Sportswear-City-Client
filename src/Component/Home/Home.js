@@ -14,6 +14,8 @@ const Home = () => {
              <Activity></Activity>
              <br /> <br /> <br /> <br />
              <Reviews></Reviews>
+             <br /> <br /> <br /> <br />
+             
         </div>
     );
 };
