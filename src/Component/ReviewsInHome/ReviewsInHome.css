@@ -1,14 +1,21 @@
-.reviews-page-card {
+.reviews-in-home-bg {
+    background-color: rgb(233, 232, 223);
+}
+.reviews-in-home-content{
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+.reviews-in-home-page-card {
     position: relative;
     background-color: rgb(252, 255, 240);
     box-shadow: 0.5px 0.5px 10px rgb(117, 117, 107);
     transition: 0.3s;
 }
-.reviews-page-card:hover {
+.reviews-in-home-page-card:hover {
     box-shadow: 0.5px 0.5px 10px 5px rgb(119, 118, 111);
     transition: 0.3s;
 }
-.reviews-page-card-name {
+.reviews-in-home-page-card-name {
     background-color: rgba(49, 49, 49, 0.781);
     width: 70%;
 }

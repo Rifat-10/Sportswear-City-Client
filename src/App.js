@@ -10,6 +10,9 @@ import Inventory from './Component/Inventory/Inventory';
 import ManageInventory from './Component/ManageInventory/ManageInventory';
 import AddNewInventory from './Component/AddNewInventory/AddNewInventory';
 import Notfound from './Component/Notfound/Notfound';
+import MyInventory from './Component/MyInventory/MyInventory';
+import AddNewReview from './Component/AddNewReview/AddNewReview';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -22,20 +25,34 @@ function App() {
           path='inventory/:id'
           element={
             
-              <Inventory />
+            <PrivateRoute><Inventory /></PrivateRoute> 
           }
         ></Route>
        <Route path='blog' element={<Blog />}></Route>
        <Route
           path='manageInventory'
           element={
-              <ManageInventory />
+            <PrivateRoute><ManageInventory /></PrivateRoute>
           }
         ></Route>
         <Route
           path='addNewInventory'
           element={
               <AddNewInventory />
+
+          }
+        ></Route>
+        <Route
+          path='myInventories'
+          element={
+              <MyInventory />
+
+          }
+        ></Route>
+         <Route
+          path='addNewReview'
+          element={
+              <PrivateRoute><AddNewReview /></PrivateRoute>
 
           }
         ></Route>
