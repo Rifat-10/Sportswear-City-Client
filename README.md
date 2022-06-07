@@ -1,8 +1,10 @@
-##Sportswear City
+#Sportswear City
 Live Site Link: https://sportswear-city.web.app/
 
-##Key Points:
+#Key Points:
+
 ➢ Developed and designed a full-stack sports-related website where everything can be managed.
+
 ➢ There is an authentication process for accessing the main functionality.
 ➢ Users can see all sports items and can go to any item details.
 
