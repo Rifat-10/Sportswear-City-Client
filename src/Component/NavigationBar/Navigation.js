@@ -28,17 +28,17 @@ const Navigation = () => {
               {user.email ? (
                 <>
                   <Nav.Item>
-                    <Nav.Link as={Link} to='/manageInventory'>
+                    <Nav.Link as={Link} to='/'>
                       Manage Inventory
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link as={Link} to='/addNewInventory'>
+                    <Nav.Link as={Link} to='/'>
                       Add Inventory
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link as={Link} to='/myInventories'>
+                    <Nav.Link as={Link} to='/'>
                       My Inventories
                     </Nav.Link>
                   </Nav.Item>
